@@ -25,3 +25,10 @@ Artificial intelegence and data science projects.
 * Best cut
 * Support vector machines
 
+Possible outcomes
+| .        | True | False |
+|----------|------|-------|
+| Positive | TP   | FP    |
+| Negative | TN   | FN    |
+
+### Titanic parabole
