@@ -31,4 +31,5 @@ Possible outcomes
 | Positive | TP   | FP    |
 | Negative | TN   | FN    |
 
-### Titanic parabole
+# ds-3
+## Regression
