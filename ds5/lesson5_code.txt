@@ -1,0 +1,34 @@
+dtf_new = pd.DataFrame()
+for c in sorted(dtf['cluster_kmeans'].unique()):
+    dtf_cluster = dtf[dtf['cluster_kmeans']==c]
+    
+    ## hubs and targets
+    lst_hubs = dtf_cluster[dtf_cluster["Cost"]=="low"
+               ].sort_values("Capacity").to_dict("records")
+    lst_targets = dtf_cluster[dtf_cluster["Cost"]=="high"
+               ].sort_values("Staff").to_dict("records")
+    ## move targets
+    for target in lst_targets:
+         for hub in lst_hubs:
+             ### if hub has space
+             if hub["Capacity"] > 0:
+                residuals = hub["Capacity"] - target["Staff"]
+                #### case of hub has still capacity: do next target
+                if residuals >= 0:
+                   hub["Staff"] += target["Staff"]
+                   hub["Capacity"] = hub["Potential"] - hub["Staff"]
+                   target["Capacity"] = target["Potential"]
+                   target["Staff"] = 0
+                   break
+                #### case of hub is full: do next hub
+                else:
+                   hub["Capacity"] = 0
+                   hub["Staff"] = hub["Potential"]
+                   target["Staff"] = -residuals
+                   target["Capacity"] = target["Potential"]-target["Staff"]
+    dtf_new = dtf_new.append(pd.DataFrame(lst_hubs)
+                 ).append(pd.DataFrame(lst_targets))
+dtf_new = dtf_new.append(dtf[dtf["Cost"]=="medium"]
+                 ).reset_index(drop=True).sort_values(
+                 ['cluster_kmeans',"Staff"])
+dtf_new.head()
