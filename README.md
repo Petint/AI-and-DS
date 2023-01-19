@@ -25,8 +25,8 @@ Artificial intelegence and data science projects.
 ## ds-2
 ### Cllassification
 * K nearest neighbour method
-  - we chose a number (k)
-  - we check closest neighbours
+  - we chose a point (k)
+  - we check n closest neighbours
   - we predict what k could be
   - number of closest neighbours is always odd
 * Decision tree
@@ -49,8 +49,6 @@ Possible outcomes
 ## Data prep
 * Get data
 * Remove N/As
-* Remove 
-* 
 
 ## Clustering
  * sklearn.cluster
@@ -60,3 +58,81 @@ Possible outcomes
      * complete
      * ward
  * heatmaps with seaborn
+
+# AI1
+* TF basics
+* using keras
+* using keras datasets
+* We build neural networks:
+### Sequential
+```python
+from keras.engine.sequential import Sequential
+dropout = 0.45
+hidden_nodes = 256
+batch_size = 128
+model = Sequential()
+model.add(Dense(hidden_nodes, input_dim=input_size))
+model.add(Activation('relu'))
+model.add(Dropout(dropout))
+
+model.add(Dense(hidden_nodes))
+model.add(Activation('relu'))
+model.add(Dropout(dropout))
+
+model.add(Dense(num_labels))
+model.add(Activation('softmax'))
+```
+#### Model summary
+```
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense (Dense)               (None, 256)               200960    
+                                                                 
+ activation (Activation)     (None, 256)               0         
+                                                                 
+ dropout (Dropout)           (None, 256)               0         
+                                                                 
+ dense_1 (Dense)             (None, 256)               65792     
+                                                                 
+ activation_1 (Activation)   (None, 256)               0         
+                                                                 
+ dropout_1 (Dropout)         (None, 256)               0         
+                                                                 
+ dense_2 (Dense)             (None, 10)                2570      
+                                                                 
+ activation_2 (Activation)   (None, 10)                0         
+                                                                 
+=================================================================
+Total params: 269,322
+Trainable params: 269,322
+Non-trainable params: 0
+_________________________________________________________________
+```
+- We compile and fit the model for 20 epochs
+- We check its accuracy
+- Test accuracy: 98.2%
+
+### Convolution
+```python
+from hashlib import md5
+
+model2 = Sequential()
+
+model2.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+model2.add(MaxPooling2D((2, 2)))
+model2.add(Flatten())
+
+model2.add(Dense(100, activation='relu'))
+model2.add(Dropout(dropout))
+
+model2.add(Dense(50, activation='relu'))
+model2.add(Dropout(dropout))
+
+
+model2.add(Dense(10, activation='softmax'))
+```
+- We compile and fit the model for 20 epochs
+- We check its accuracy
+- Test accuracy: 98.7%
