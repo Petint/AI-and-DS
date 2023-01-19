@@ -23,7 +23,7 @@ Artificial intelegence and data science projects.
 * Creating training set
 * Creating test set
 ## ds-2
-### Cllassification
+### Classification
 * K nearest neighbour method
   - we chose a point (k)
   - we check n closest neighbours
