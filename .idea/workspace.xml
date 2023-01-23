@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffcff857-54bd-4c58-aa2d-7223a0ed56cd" name="Changes" comment="ds-4 revisit">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="ffcff857-54bd-4c58-aa2d-7223a0ed56cd" name="Changes" comment="### Classification">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -47,7 +48,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674146699290</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ai1 revisit">
+      <created>1674147971104</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674147971104</updated>
+    </task>
+    <task id="LOCAL-00003" summary="### Classification">
+      <created>1674148018179</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674148018179</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -63,6 +78,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ds-4 revisit" />
-    <option name="LAST_COMMIT_MESSAGE" value="ds-4 revisit" />
+    <MESSAGE value="ai1 revisit" />
+    <MESSAGE value="### Classification" />
+    <option name="LAST_COMMIT_MESSAGE" value="### Classification" />
   </component>
 </project>
